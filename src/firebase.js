@@ -14,8 +14,8 @@ const firebaseConfig = {
   projectId: "crm-budget-9d90e",
   storageBucket: "crm-budget-9d90e.appspot.com",
   messagingSenderId: "445182632123",
-  appId: "1:445182632123:web:1f9623d44c1c17b7aa099e",
-  measurementId: "G-78J7K2YV5K"
+  appId: "1:445182632123:web:b55e30b4739c2d94aa099e",
+  measurementId: "G-ERN34EQHE9"
 };
 
 // Initialize Firebase
