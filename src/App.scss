@@ -1,0 +1,150 @@
+
+.App {
+  // width: 100%;
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // justify-content: flex-start;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1280px;
+  background-color: #fff;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-logo{
+    width: 30px;
+    height: 30px;
+  }
+
+  nav {
+    display: flex;
+    a {
+      margin: 0 10px 5px 10px;
+      text-decoration: none;
+      transition: all .5s;
+      text-decoration: none;
+      position: relative;
+      display: inline-flex;
+      transition: all .3s ease;
+      font-weight: bold;
+      cursor: pointer;
+
+      &.active, &:hover {
+        color:  rgb(25, 143, 69);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background-color: rgb(25, 143, 69);
+        top: 100%;
+        width: 1ch;
+        right: 0;
+        transition: all .3s ease;
+      }
+
+      &:hover::after {
+        background-color: rgb(25, 143, 69);
+        width: 100%;
+      }
+    }
+  }
+
+  .input-search {
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgb(25, 143, 69);
+    &:hover {
+      border-color: orange;
+    }
+     &:focus, &:focus-within, &:focus-visible {
+      border-color: rgb(25, 143, 69);
+    }
+  }
+}
+
+.main {
+
+}
+
+.top {
+  margin: 50px 0;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & p {
+    color: rgb(25, 143, 69);
+    margin: 5px 0;
+    &.italic {
+      color: #fff;
+      font-style: italic;
+      font-weight: bold;
+      font-family: "Lobster";
+      padding: 10px;
+      background-color: sandybrown;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 70px;
+    margin: 0;
+  }
+
+  img {
+    width: 450px;
+    height:450px;
+    margin-left: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.middle {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  h3 {
+    font-size: 30px;
+    line-height: 33px;
+    font-style: italic;
+    margin: 15px auto ;
+  }
+
+  p {
+    color: sandybrown;
+  }
+
+}
+.groups-btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30px;
+
+  .btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: rgb(25, 143, 69);
+    border-color: rgb(25, 143, 69);
+    margin-right: 30px;
+
+    &.btn-active {
+      color: #fff;
+      background-color: rgb(25, 143, 69);
+    }
+  }
+}
