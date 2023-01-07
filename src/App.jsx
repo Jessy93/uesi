@@ -1,7 +1,5 @@
 import { useState } from "react";
 import logo from "./assets/img/logominified.png";
-import imgpdt1 from "./assets/img/imgpdt1.jpeg";
-import bgmenu from "./assets/img/bgmenu.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -12,7 +10,9 @@ import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import Toast from 'react-bootstrap/Toast';
 
-import firebase from './firebase.js'
+import { collection, addDoc } from "firebase/firestore";
+import {db} from './firebase';
+
 import "./App.scss";
 import "./Menu.scss";
 
@@ -70,21 +70,24 @@ function App() {
 
     const response = await fetch('https://reqres.in/api/posts', requestOptions);
     const data = await response.json();
-    this.setState({ postId: data.id });
 
-    // console.log('event', event);
-    // setShowToast(true)
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-            // User is signed in
-            var email = user.email;
-            // ...
-        } else {
-            // User is not signed in
-            // ...
-        }
-    });
-    firebase.auth().signInWithEmailAndPassword(email, password);
+    try {
+      const docRef = await addDoc(collection(db, "command"), requestOptions);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+  }
+
+  const getListCommand = () => {
+     // await getDocs(collection(db, "todos"))
+    // .then((querySnapshot)=>{               
+    //     const newData = querySnapshot.docs
+    //         .map((doc) => ({...doc.data(), id:doc.id }));
+    //     setTodos(newData);                
+    //     console.log(todos, newData);
+    // })
   }
 
   return (
